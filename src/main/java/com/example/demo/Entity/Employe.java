@@ -56,6 +56,12 @@ public class Employe implements Serializable {
 	public Employe() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "Employe [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email_address="
+				+ email_address + ", job_title=" + job_title + "]";
+	}
+	
 	
 	
 	
