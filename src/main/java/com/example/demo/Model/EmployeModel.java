@@ -1,28 +1,14 @@
-package com.example.demo.Entity;
+package com.example.demo.Model;
 
-import java.io.Serializable;
+import com.example.demo.Entity.Employe;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class Employe implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EmployeModel {
+	//modelo para usar el controlador 
 	Long id;
-	
 	private String first_name;
 	private String last_name;
 	private String email_address;
 	private String job_title;
-	
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -53,22 +39,22 @@ public class Employe implements Serializable {
 	public void setJob_title(String job_title) {
 		this.job_title = job_title;
 	}
-	public Employe(String first_name, String last_name, String email_address, String job_title) {
+	public EmployeModel(Long id, String first_name, String last_name, String email_address, String job_title) {
 		super();
+		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email_address = email_address;
 		this.job_title = job_title;
 	}
-	public Employe() {
-		super();
+	//entidad a objeto
+	public EmployeModel(Employe e) {
+		//this.id = e.getId(); no deberia pasar 
+		this.first_name = e.getFirst_name();
+		this.last_name = e.getLast_name();
+		this.email_address = e.getEmail_address();
+		this.job_title = e.getJob_title();
 	}
-	@Override
-	public String toString() {
-		return "Employe [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email_address="
-				+ email_address + ", job_title=" + job_title + "]";
-	}
-	
 	
 	
 	

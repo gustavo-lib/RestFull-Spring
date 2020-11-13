@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.Employe;
+import com.example.demo.Model.Convertidor;
+import com.example.demo.Model.EmployeModel;
 import com.example.demo.Repository.RepositoryEmploye;
 import com.example.demo.Service.ServiceEmploye;
 
@@ -19,12 +21,15 @@ public class ServiceEmployeImpl implements ServiceEmploye {
 	@Qualifier("RepoEmploye")
 	private RepositoryEmploye repositoryEmploye;
 	
-	
+	@Autowired
+	@Qualifier("convertidor")
+	private Convertidor convertidor;
 
 	@Override
-	public List<Employe> getAll() {
+	public List<EmployeModel> getAll() {
 		// TODO Auto-generated method stub
-		return repositoryEmploye.findAll();
+		return convertidor.getListEntityToModel(repositoryEmploye.findAll());
+		//return repositoryEmploye.findAll();
 	}
 
 	@Override

@@ -4,10 +4,11 @@ import java.util.List;
 
 
 import com.example.demo.Entity.Employe;
+import com.example.demo.Model.EmployeModel;
 
 public interface ServiceEmploye {
 	
-	List<Employe>  getAll();
+	List<EmployeModel>  getAll();
 	
 	Employe getFindId(Long id);
 	

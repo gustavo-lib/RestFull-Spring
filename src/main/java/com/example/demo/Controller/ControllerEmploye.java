@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Entity.Employe;
+import com.example.demo.Model.EmployeModel;
 import com.example.demo.Service.ServiceEmploye;
 
 
@@ -30,8 +31,8 @@ public class ControllerEmploye {
 	private static final Logger logger = LoggerFactory.getLogger(ControllerEmploye.class);
 	
 	@GetMapping("/getall")
-	 ResponseEntity<List<Employe>>  getEmployee(){
-		
+	 //ResponseEntity<List<Employe>>  getEmployee(){
+	ResponseEntity<List<EmployeModel>>  getEmployee(){
 		return new ResponseEntity<>(serviceEmploye.getAll(),HttpStatus.OK);
 	}
 	
