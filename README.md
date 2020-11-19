@@ -4,7 +4,7 @@
 - Spring Data JPA 
 - Data Base MySQL
 
-###  API Description for Project
+###  API Description 
 
 METHOD | PATH | DESCRIPTION 
 ------------|-----|------------
